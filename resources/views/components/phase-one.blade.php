@@ -18,21 +18,18 @@
         <th class="bg-blue-100 border text-left px-6 py-4">SIZE</th>
         <th class="bg-blue-100 border text-left px-6 py-4">COLOR_NAME</th>
         <th class="bg-blue-100 border text-left px-6 py-4">PIECE_PRICE</th>
-        <th class="bg-blue-100 border text-left px-6 py-4">Created Info</th>
-        <th class="bg-blue-100 border text-left px-6 py-4">Updated Info</th>
       </tr>
       <template x-for="(record,index) in records">
       <tr>
           <!-- <td x-text="index+1"></td> -->
-          <td x-text="record.unique_key"></td>
-          <td x-text="record.product_title"></td>
-          <td x-text="record.product_description"></td>
-          <td x-text="record.style"></td>
-          <td x-text="record.sanmar_mainframe_color"></td>
-          <td x-text="record.size"></td>
-          <td x-text="record.color_name"></td>
-          <td x-text="record.piece_price"></td>
-          <td x-text="record.piece_price"></td>
+          <td class="border text-left px-6 py-4" x-text="record.unique_key"></td>
+          <td class="border text-left px-6 py-4" x-text="record.product_title"></td>
+          <td class="border text-left px-6 py-4" x-text="record.product_description"></td>
+          <td class="border text-left px-6 py-4" x-text="record.style"></td>
+          <td class="border text-left px-6 py-4" x-text="record.sanmar_mainframe_color"></td>
+          <td class="border text-left px-6 py-4" x-text="record.size"></td>
+          <td class="border text-left px-6 py-4" x-text="record.color_name"></td>
+          <td class="border text-left px-6 py-4" x-text="record.piece_price"></td>
       </tr>
       </template>
     </table>

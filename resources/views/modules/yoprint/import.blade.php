@@ -20,7 +20,8 @@
 <form action="{{ route('yo_upload') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="file" name="file" accept=".csv">
-    <button type="submit">Import CSV</button>
+    <br><br>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Import CSV</button>
 </form>
 
 
