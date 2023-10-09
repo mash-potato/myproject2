@@ -6,16 +6,16 @@ use Illuminate\Support\Collection;
 
 use Maatwebsite\Excel\Row;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\OnEachRow;
-use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 
 use Auth;
 use App\Models\User;
 use App\Models\YoPrint;
 
 
-class YoPrintImport implements ToModel, WithHeadingRow
+class YoPrintImport implements ToModel, WithHeadingRow, WithChunkReading, WithBatchInserts
 {
     /**
     * @param Collection $collection
@@ -76,7 +76,15 @@ class YoPrintImport implements ToModel, WithHeadingRow
         }
     }
 
+    public function batchSize(): int
+    {
+        return 5000;
+    }
 
+    public function chunkSize(): int
+    {
+        return 5000;
+    }
 
     public function clearNonUTF8($data)
     {
